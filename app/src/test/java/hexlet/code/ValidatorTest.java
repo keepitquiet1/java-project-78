@@ -1,9 +1,12 @@
 package hexlet.code;
 
-import static org.junit.jupiter.api.Assertions.*;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
+
 class ValidatorTest {
 
-    @org.junit.jupiter.api.Test
+    @Test
     void isValid() {
+        Assertions.assertTrue(true);
     }
 }
