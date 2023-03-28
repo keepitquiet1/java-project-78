@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="ru"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>MapSchema.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">app</a> &gt; <a href="index.source.html" class="el_package">hexlet.code.schemas</a> &gt; <span class="el_source">MapSchema.java</span></div><h1>MapSchema.java</h1><pre class="source lang-java linenums">package hexlet.code.schemas;
+
+import java.util.Map;
+import java.util.function.Predicate;
+
+public class MapSchema extends Schema {
+<span class="fc" id="L7">    public MapSchema() {</span>
+<span class="fc" id="L8">    }</span>
+
+    @Override
+    public final boolean isValidType(Object object) {
+<span class="fc" id="L12">        return object instanceof Map;</span>
+    }
+
+    @Override
+    public final MapSchema required() {
+<span class="fc" id="L17">        this.isRequired = true;</span>
+<span class="fc" id="L18">        addCheck(x -&gt; x instanceof Map);</span>
+<span class="fc" id="L19">        return this;</span>
+    }
+
+    public final MapSchema sizeof(int size) {
+<span class="fc bfc" id="L23" title="All 2 branches covered.">        Predicate&lt;Map&gt; range = x -&gt; x.size() == size;</span>
+<span class="fc" id="L24">        addCheck(range);</span>
+<span class="fc" id="L25">        return this;</span>
+    }
+
+    public final MapSchema shape(Map&lt;String, Schema&gt; schemas) {
+<span class="nc" id="L29">        Predicate&lt;Map&gt; shape = value -&gt; shapeCheck(schemas, value);</span>
+<span class="nc" id="L30">        addCheck(shape);</span>
+<span class="nc" id="L31">        return this;</span>
+    }
+
+    private boolean shapeCheck(Map&lt;String, Schema&gt; schemas, Map&lt;String, Object&gt; mapToCheck) {
+
+<span class="nc bnc" id="L36" title="All 2 branches missed.">        for (Map.Entry&lt;String, Schema&gt; entry : schemas.entrySet()) {</span>
+
+<span class="nc" id="L38">            String key = entry.getKey();</span>
+<span class="nc" id="L39">            Schema check = entry.getValue();</span>
+<span class="nc" id="L40">            Object toCheck = mapToCheck.get(key);</span>
+
+<span class="nc bnc" id="L42" title="All 4 branches missed.">            if (!mapToCheck.containsKey(key) || !check.isValid(toCheck)) {</span>
+<span class="nc" id="L43">                return false;</span>
+            }
+
+<span class="nc" id="L46">        }</span>
+<span class="nc" id="L47">        return true;</span>
+    }
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
