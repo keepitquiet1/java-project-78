@@ -31,7 +31,8 @@ abstract public class Schema {
     public void setSchemaClass(Object schemaClass) {
         this.schemaClass = schemaClass;
     }
-    public void addCheck(Predicate check){
+
+    public void addCheck(Predicate check) {
         checkList.add(check);
     }
 }

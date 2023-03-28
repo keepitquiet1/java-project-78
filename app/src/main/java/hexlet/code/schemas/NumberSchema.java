@@ -2,11 +2,12 @@ package hexlet.code.schemas;
 
 import java.util.function.Predicate;
 
-public class NumberSchema  extends Schema{
+public class NumberSchema extends Schema {
 
     public NumberSchema() {
         setSchemaClass(Integer.class);
     }
+
     @Override
     public final boolean isValidType(Object object) {
         return object instanceof Integer;
