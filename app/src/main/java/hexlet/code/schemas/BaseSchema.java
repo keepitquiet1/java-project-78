@@ -4,12 +4,12 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-abstract class Schema {
+abstract class BaseSchema {
 
     private List<Predicate> checkList = new ArrayList<>();
     protected boolean isRequired = false;
 
-    abstract Schema required();
+    abstract BaseSchema required();
 
     public final boolean isValid(Object schema) {
 

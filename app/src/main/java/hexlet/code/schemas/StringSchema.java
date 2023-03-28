@@ -2,7 +2,7 @@ package hexlet.code.schemas;
 
 import java.util.function.Predicate;
 
-public class StringSchema extends Schema {
+public class StringSchema extends BaseSchema {
 
     public StringSchema() {
     }
