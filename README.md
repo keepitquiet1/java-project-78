@@ -7,7 +7,7 @@
 Library to chech data
 ## Example:
 ` Validator v = new Validator(); `
-### String check"
+### String check:
 ```
 StringSchema schema = v.string().required();
 
