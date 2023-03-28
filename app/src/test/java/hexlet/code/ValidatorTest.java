@@ -33,6 +33,10 @@ class ValidatorTest {
         Assertions.assertTrue(schema.contains("wh").isValid("what does the fox say"));
         Assertions.assertTrue(schema.contains("what").isValid("what does the fox say"));
 
+        Assertions.assertTrue(schema.isValid("what"));
+        Assertions.assertTrue(schema.minLength(7).isValid("what does the fox say"));
+        Assertions.assertFalse(schema.isValid("what"));
+
         Assertions.assertFalse(schema.contains("whatthe").isValid("what does the fox say"));
         Assertions.assertFalse(schema.isValid("what does the fox say"));
 
