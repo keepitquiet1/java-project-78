@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="hexlet.code.ValidatorTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-03-28T03:17:01" hostname="DESKTOP-QDNM031" time="0.024">
+<testsuite name="hexlet.code.ValidatorTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-03-28T14:24:24" hostname="DESKTOP-QDNM031" time="0.028">
   <properties/>
-  <testcase name="stringIsValid()" classname="hexlet.code.ValidatorTest" time="0.016"/>
+  <testcase name="stringIsValid()" classname="hexlet.code.ValidatorTest" time="0.02"/>
   <testcase name="numberIsValid()" classname="hexlet.code.ValidatorTest" time="0.003"/>
   <testcase name="testValidatorMap()" classname="hexlet.code.ValidatorTest" time="0.003"/>
   <system-out><![CDATA[]]></system-out>
