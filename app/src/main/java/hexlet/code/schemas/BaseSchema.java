@@ -13,12 +13,12 @@ public abstract class BaseSchema {
 
     public final boolean isValid(Object schema) {
 
-        if (!isRequired) {
+        if (!isRequired && !isValidType(schema)) {
             return true;
         } else if (isRequired && !isValidType(schema)) {
             return false;
         } else {
-            return checkList.stream().allMatch(check -> check.test(schema));
+            return this.checkList.stream().allMatch(check -> check.test(schema));
         }
     }
 
