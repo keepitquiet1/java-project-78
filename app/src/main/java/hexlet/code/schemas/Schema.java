@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 
-abstract public class Schema {
+abstract class Schema {
 
     private List<Predicate> checkList = new ArrayList<>();
     protected boolean isRequired = false;
@@ -24,7 +24,7 @@ abstract public class Schema {
 
     abstract boolean isValidType(Object object);
 
-    public void addCheck(Predicate check){
+    public void addCheck(Predicate check) {
         checkList.add(check);
     }
 }

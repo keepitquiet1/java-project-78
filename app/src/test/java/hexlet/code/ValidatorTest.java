@@ -2,7 +2,6 @@ package hexlet.code;
 
 import hexlet.code.schemas.MapSchema;
 import hexlet.code.schemas.NumberSchema;
-import hexlet.code.schemas.Schema;
 import hexlet.code.schemas.StringSchema;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeAll;
@@ -74,7 +73,6 @@ class ValidatorTest {
 
     @Test
     public void testValidatorMap() {
-        Validator v = new Validator();
         MapSchema schema = v.map();
 
         Assertions.assertTrue(schema.isValid(null));
