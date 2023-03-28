@@ -5,8 +5,13 @@ import java.util.function.Predicate;
 public class StringSchema extends Schema {
 
     public StringSchema() {
-        setSchemaClass(String.class);
+    }
+
+    @Override
+    public final StringSchema required() {
+        this.isRequired = true;
         addCheck(x -> x instanceof String && !x.equals(""));
+        return this;
     }
 
     @Override

@@ -6,14 +6,10 @@ import java.util.function.Predicate;
 
 abstract public class Schema {
 
-    private Object schemaClass;
     private List<Predicate> checkList = new ArrayList<>();
-    private boolean isRequired = false;
+    protected boolean isRequired = false;
 
-    public final Schema required() {
-        this.isRequired = true;
-        return this;
-    }
+    abstract Schema required();
 
     public final boolean isValid(Object schema) {
 
@@ -28,11 +24,7 @@ abstract public class Schema {
 
     abstract boolean isValidType(Object object);
 
-    public void setSchemaClass(Object schemaClass) {
-        this.schemaClass = schemaClass;
-    }
-
-    public void addCheck(Predicate check) {
+    public void addCheck(Predicate check){
         checkList.add(check);
     }
 }

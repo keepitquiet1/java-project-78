@@ -5,7 +5,13 @@ import java.util.function.Predicate;
 public class NumberSchema extends Schema {
 
     public NumberSchema() {
-        setSchemaClass(Integer.class);
+    }
+
+    @Override
+    public final NumberSchema required() {
+        this.isRequired = true;
+        addCheck(x -> x instanceof Integer);
+        return this;
     }
 
     @Override
