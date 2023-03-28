@@ -1,11 +1,8 @@
 package hexlet.code;
 
-import lombok.Data;
-
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
 public class StringSchema {
     private boolean required = false;
     private List<String> condition = new ArrayList<>();

@@ -8,10 +8,9 @@ class ValidatorTest {
     private static Validator v;
     private static NumberSchema numberSchema;
     private static StringSchema stringSchema;
-    ;
 
     @BeforeAll
-    private static void setUp() {
+    static void setUp() {
         v = new Validator();
         numberSchema = v.number();
         stringSchema = v.string();
