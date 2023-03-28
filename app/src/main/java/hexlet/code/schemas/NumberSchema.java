@@ -19,13 +19,13 @@ public class NumberSchema extends BaseSchema {
         return object instanceof Integer;
     }
 
-    public NumberSchema positive() {
+    public final NumberSchema positive() {
         Predicate<Integer> positive = a -> a > 0;
         addCheck(positive);
         return this;
     }
 
-    public NumberSchema range(int min, int max) {
+    public final NumberSchema range(int min, int max) {
         Predicate<Integer> range = x -> (x >= min) && (x <= max);
         addCheck(range);
         return this;

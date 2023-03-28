@@ -24,7 +24,7 @@ public abstract class BaseSchema {
 
     abstract boolean isValidType(Object object);
 
-    public void addCheck(Predicate check) {
+    public final void addCheck(Predicate check) {
         checkList.add(check);
     }
 }
