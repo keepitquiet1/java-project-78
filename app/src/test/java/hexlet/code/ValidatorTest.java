@@ -11,19 +11,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 class ValidatorTest {
-    private static Validator v;
-    private static NumberSchema numberSchema;
-    private static StringSchema stringSchema;
 
-    @BeforeAll
-    static void setUp() {
-        v = new Validator();
-        numberSchema = v.number();
-        stringSchema = v.string();
-    }
 
     @Test
     void stringIsValid() {
+        Validator v = new Validator();
+        StringSchema stringSchema = v.string();
 
         Assertions.assertTrue(stringSchema.isValid(""));
         Assertions.assertTrue(stringSchema.isValid(null));
@@ -47,8 +40,8 @@ class ValidatorTest {
 
     @Test
     void numberIsValid() {
-        Assertions.assertTrue(true);
-
+        Validator v = new Validator();
+        NumberSchema numberSchema = v.number();
 
 // Пока не вызван метод required(), null считается валидным
         Assertions.assertTrue(numberSchema.isValid(null)); // true
@@ -73,6 +66,7 @@ class ValidatorTest {
 
     @Test
     public void testValidatorMap() {
+        Validator v = new Validator();
         MapSchema schema = v.map();
 
         Assertions.assertTrue(schema.isValid(null));
